@@ -10,20 +10,32 @@ void test_add(void);
 void test_subtract(void);
 void test_multiply(void);
 void test_divide(void);
-void test_modulus(void);
-void test_primenumber(void);
 void test_greater(void);
 void test_smaller(void);
-void test_square(void);
-void test_and(void);
-void test_or(void);
-void test_not(void);
-void test_nand(void);
-void test_nor(void);
+void test_primenum(void);
+void test_primenum1(void);
+void test_evenodd(void);
+void test_evenodd1(void);
+void test_posneg(void);
+void test_posneg1(void);
 void test_factorial(void);
-void test_adder3bit(void);
-void test_subtractor3bit(void);
-
+void test_factorial1(void);
+void test_squarearea(void);
+void test_squareperi(void);
+void test_square(void);
+void test_square1(void);
+void test_cube(void);
+void test_cube1(void);
+void test_reverse(void);
+void test_reverse1(void);
+void test_palindrome(void);
+void test_palindrome1(void);
+void test_gcd(void);
+void test_lcm(void);
+void test_modulus(void);
+void test_kilometertometer(void);
+void test_kilotocentimeter(void);
+void test_kilotomillimeter(void);
 
 /* Start of the application test */
 int main() {
@@ -40,19 +52,33 @@ int main() {
   CU_add_test(suite, "subtract", test_subtract);
   CU_add_test(suite, "multiply", test_multiply);
   CU_add_test(suite, "divide", test_divide);
-  CU_add_test(suite, "modulus", test_modulus);
-  CU_add_test(suite, "primenumber", test_primenumber);
   CU_add_test(suite, "greater", test_greater);
   CU_add_test(suite, "smaller", test_smaller);
-  CU_add_test(suite, "square", test_square);
-  CU_add_test(suite, "and", test_and);
-  CU_add_test(suite, "or", test_or);
-  CU_add_test(suite, "not", test_not);
-  CU_add_test(suite, "and", test_nand);
-  CU_add_test(suite, "or", test_nor);
+  CU_add_test(suite, "primenum", test_primenum);
+  CU_add_test(suite, "primenum1", test_primenum1);
+  CU_add_test(suite, "evenodd", test_evenodd);
+   CU_add_test(suite, "evenodd1", test_evenodd1);
+   CU_add_test(suite, "posneg", test_posneg);
+  CU_add_test(suite, "posneg1", test_posneg1);
   CU_add_test(suite, "factorial", test_factorial);
-  CU_add_test(suite, "adder3bit", test_adder3bit);
-  CU_add_test(suite, "subtractor3bit", test_subtractor3bit);
+   CU_add_test(suite, "factorial1", test_factorial1);
+   CU_add_test(suite, "squarearea", test_squarearea);
+   CU_add_test(suite, "squareperi", test_squareperi);
+   CU_add_test(suite, "square", test_square);
+   CU_add_test(suite, "square1", test_square1);
+   CU_add_test(suite, "cube", test_cube);
+  CU_add_test(suite, "cube1", test_cube1);
+  CU_add_test(suite, "reverse", test_reverse);
+  CU_add_test(suite, "reverse1", test_reverse1);
+  CU_add_test(suite, "palindrome", test_palindrome);
+  CU_add_test(suite, "palindrome1", test_palindrome1);
+   CU_add_test(suite, "gcd", test_gcd);
+  CU_add_test(suite, "lcm", test_lcm);
+  CU_add_test(suite, "modulus", test_modulus);
+   CU_add_test(suite, "kilometertometer", test_kilometertometer);
+ CU_add_test(suite, "kilotocentimeter", test_kilotocentimeter);
+   CU_add_test(suite, "kilotomillimeter", test_kilotomillimeter);
+
 
 /* Note: Do not edit START*/
   /* Setup Test Framework to output the result to Screen */
@@ -95,81 +121,193 @@ void test_divide(void) {
   /* Dummy fail*/
   CU_ASSERT(3 == divide(2, 2));
 }
-void test_modulus(void) {
-  CU_ASSERT(3 == divide(10, 7));
-  
-  /* Dummy fail*/
-  CU_ASSERT(1 == divide(2, 2));
-}
-void test_primenumber(void) {
-  CU_ASSERT(1 == primenumber(5));
-  
-  /* Dummy fail*/
-  CU_ASSERT(0 == primenumber(2));
-}
+
 void test_greater(void) {
-  CU_ASSERT(10 == greater(10, 7));
+  CU_ASSERT(20 == greater(10, 20));
   
   /* Dummy fail*/
-  CU_ASSERT(1 == greater(2, 1));
+  CU_ASSERT(30 == greater(30, 40));
 }
 void test_smaller(void) {
-  CU_ASSERT(7 == smaller(10, 7));
+  CU_ASSERT(10 == smaller(10, 20));
   
   /* Dummy fail*/
-  CU_ASSERT(4 == divide(4, 2));
+  CU_ASSERT(40 == smaller(30, 40));
 }
-void test_square(void) {
-  CU_ASSERT(49 == square(7));
+
+void test_primenum(void)
+{
+   CU_ASSERT(1 == primenum(7));
   
   /* Dummy fail*/
-  CU_ASSERT(5 == square(2));
+  CU_ASSERT(1 == primenum(30));
 }
-void test_and(void) {
-  CU_ASSERT(1 == and(1,1));
+
+void test_primenum1(void)
+{
+   CU_ASSERT(1 == primenum1(7));
   
   /* Dummy fail*/
-  CU_ASSERT(1 == and(1,0));
+  CU_ASSERT(1 == primenum1(30));
 }
-void test_or(void) {
-  CU_ASSERT(1 == or(1,0));
+
+void test_evenodd(void)
+{
+   CU_ASSERT(1 == evenodd(6));
   
   /* Dummy fail*/
-  CU_ASSERT(0 == or(1,1));
+  CU_ASSERT(1 == evenodd(5));
 }
-void test_not(void) {
-  CU_ASSERT(1 == not(0));
+
+void test_evenodd1(void)
+{
+   CU_ASSERT(1 == evenodd1(6));
   
   /* Dummy fail*/
-  CU_ASSERT(0 == not(0));
+  CU_ASSERT(1 == evenodd1(5));
 }
-void test_nand(void) {
-  CU_ASSERT(0 == and(1,1));
+  
+void test_posneg(void)
+{
+   CU_ASSERT(1 == posneg(6));
   
   /* Dummy fail*/
-  CU_ASSERT(0 == and(1,0));
+  CU_ASSERT(1 == posneg(-5));
 }
-void test_nor(void) {
-  CU_ASSERT(0 == or(1,0));
+
+void test_posneg1(void)
+{
+   CU_ASSERT(1 == posneg1(6));
   
   /* Dummy fail*/
-  CU_ASSERT(1 == or(1,1));
+  CU_ASSERT(1 == posneg1(-5));
 }
-void test_factorial(void) {
-  CU_ASSERT(12 == factorial(4));
+
+void test_factorial(void)
+{
+   CU_ASSERT(120 == factorial(5));
   
   /* Dummy fail*/
-  CU_ASSERT(5 == factorial(2));
+  CU_ASSERT(110 == factorial(5));
 }
-void test_adder3bit(void) {
-  CU_ASSERT(0 == adder3bit(1,1,0));
+
+void test_factorial1(void)
+{
+   CU_ASSERT(120 == factorial1(5));
   
   /* Dummy fail*/
-  CU_ASSERT(1 == adder3bit(1,0,0));
+  CU_ASSERT(110 == factorial1(5));
 }
-void test_subtractor3bit(void) {
-  CU_ASSERT(0 == adder3bit(1,1,0));
+
+void test_squarearea(void)
+{
+   CU_ASSERT(25 == squarearea(5));
   
   /* Dummy fail*/
-  CU_ASSERT(1 == adder3bit(1,0,0));
+  CU_ASSERT(11 == squarearea(5));
+}
+void test_squareperi(void)
+{
+   CU_ASSERT(20 == squareperi(5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(11 == squareperi(5));
+}
+void test_square(void)
+{
+   CU_ASSERT(25 == square(5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(11 == square(5));
+}
+void test_square1(void)
+{
+   CU_ASSERT(25 == square1(5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(11 == square1(5));
+}
+void test_cube(void)
+{
+   CU_ASSERT(125 == cube(5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(11 == cube(5));
+}
+void test_cube1(void)
+{
+   CU_ASSERT(125 == cube1(5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(11 == cube1(5));
+}
+void test_reverse(void)
+{
+   CU_ASSERT(432 == reverse(234));
+  
+  /* Dummy fail*/
+  CU_ASSERT(234 == reverse(234));
+}
+void test_reverse1(void)
+{
+   CU_ASSERT(432 == reverse1(234));
+  
+  /* Dummy fail*/
+  CU_ASSERT(234 == reverse1(234));
+}
+void test_palindrome(void)
+{
+   CU_ASSERT(1 == palindrome(1001));
+  
+  /* Dummy fail*/
+  CU_ASSERT(1 == palindrome(2345));
+}
+void test_palindrome1(void)
+{
+   CU_ASSERT(1 == palindrome1(1001));
+  
+  /* Dummy fail*/
+  CU_ASSERT(1 == palindrome1(2345));
+}
+void test_gcd(void)
+{
+   CU_ASSERT(1 == gcd(2,5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(1 == gcd(2,6));
+}
+void test_lcm(void)
+{
+   CU_ASSERT(10 == lcm(2,5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(11 == lcm(2,6));
+}
+void test_modulus(void)
+{
+   CU_ASSERT(1 == modulus(5,2));
+  
+  /* Dummy fail*/
+  CU_ASSERT(11 == lcm(5,2));
+}
+void test_kilometertometer(void)
+{
+   CU_ASSERT(5000 == kilometertometer(5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(1000 ==kilometertometer(5));
+}
+void test_kilotocentimeter(void)
+{
+   CU_ASSERT(500000 == kilotocentimeter(5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(1000 ==kilotocentimeter(5));
+}
+void test_kilotomillimeter(void)
+{
+   CU_ASSERT(5000000 ==kilotomillimeter(5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(1000 ==kilotomillimeter(5));
 }

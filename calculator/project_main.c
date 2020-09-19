@@ -8,12 +8,11 @@
 unsigned int calculator_operation = 0;
 
 /* Operands on which calculation is performed */
-float calculator_operand1 = 0;
-float calculator_operand2 = 0;
-int calculator_operand3=0;
+int calculator_operand1 = 0;
+int calculator_operand2 = 0;
 
 /* Valid operations */
-enum operations{ sine=1, cosine, tangent,sineh,cosineh,tangenth,logten,squareroot,exponent,addition,subtraction,multiplication,division,modulus,factorial, EXIT };
+enum operations{ ADD=1, SUBTRACT, MULTIPLY, DIVIDE, GREATER, PRIMENUM, PRIMENUM1, EVENODD, EVENODD1, POSNEG, POSNEG1,FACTORIAL, FACTORIAL1, SQUAREAREA, SQUAREPERI, SQUARE, SQUARE1,CUBE, CUBE1, REVERSE, REVERSE1, PALINDROME, PALINDROME1,GCD, LCM, MODULUS, KILOMETERTOMETER, KILOTOCENTIMETER, KILOTOMILLIMETER, EXIT };
 
 /* Display the menu of operations supported */
 void calculator_menu(void);
@@ -34,9 +33,9 @@ int main(int argc, char *argv[])
 void calculator_menu(void)
 {
     printf("\nAvailable Operations\n");
-    printf("\n1. sine\n2. cosine\n3. tangent\n4. sineh\n5. cosineh\n6. tangenth\n7. logten\n8. squareroot\n9. exponent\n10. addition\n11. subtraction\n12. multiplication\n13. division\n14. modulus\n15.power\n16.factorial\n17. Exit");
+    printf("\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Greater\n6. Primenum\n7. Primenum1\n8. Evenodd\n9. Evenodd\n10. Posneg\n11. Posneg1\n12. Factorial\n13. Factorial1\n14. Squarearea\n15. Squareperi\n16. Square\n17. Square1\n18. Cube\n19. Cube1\n20. Reverse\n21. Reverse1\n22. Palindrome\n23. Palindrome1\n24. gcd\n25. Lcm\n26. Modulus\n27. Kilometertometer\n28. kilotocentimeter\n29. kilotomillimeter\n30.  Exit");
     printf("\n\tEnter your choice\n");
-
+   
      __fpurge(stdin);
     scanf("%d", &calculator_operation);
 
@@ -48,21 +47,9 @@ void calculator_menu(void)
 
     if(INVALID != valid_operation(calculator_operation))
     {
-        if(n<9 && n>0){
         printf("\n\tEnter your Numbers with space between them\n");
         __fpurge(stdin);
-        scanf("%f", &calculator_operand1);
-        }
-        else if(n>9 && n<16){
-             printf("\n\tEnter your Numbers with space between them\n");
-        __fpurge(stdin);
-        scanf("%f %f", &calculator_operand1, &calculator_operand2);
-        }
-        else if(n==16){
-         printf("\n\tEnter your Numbers with space between them\n");
-        __fpurge(stdin);
-        scanf("%d", &calculator_operand3);
-}
+        scanf("%d %d", &calculator_operand1, &calculator_operand2);
     }
     else
     {
@@ -70,140 +57,248 @@ void calculator_menu(void)
         __fpurge(stdin);
         getchar();
         return;
-
+        
     }
     switch(calculator_operation)
     {
-        case 1:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            sine(calculator_operand1));
-
+        case ADD:
+            printf("\n\t%d + %d = %d\nEnter to continue", 
+            calculator_operand1, 
+            calculator_operand2,
+            add(calculator_operand1, calculator_operand2));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 2:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            cosine(calculator_operand1));
-
+        case SUBTRACT:
+            printf("\n\t%d - %d = %d\nEnter to continue", 
+            calculator_operand1, 
+            calculator_operand2,
+            subtract(calculator_operand1, calculator_operand2));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 3:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            tangent(calculator_operand1));
-
+        case MULTIPY:
+            printf("\n\t%d * %d = %d\nEnter to continue", 
+            calculator_operand1, 
+            calculator_operand2,
+            multiply(calculator_operand1, calculator_operand2));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 4:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            sineh(calculator_operand1));
-
+        case DIVIDE:
+            printf("\n\t%d / %d = %d\nEnter to continue", 
+            calculator_operand1, 
+            calculator_operand2,
+            divide(calculator_operand1, calculator_operand2));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 5:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            cosineh(calculator_operand1));
-
+        case GREATER:
+            printf("\n\t Greater %d and %d = %d\nEnter to continue", 
+            calculator_operand1, 
+            calculator_operand2,
+            greater(calculator_operand1, calculator_operand2));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 6:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            tangenth(calculator_operand1));
-
+        case PRIMENUM:
+            printf("\n\t Primenum %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            primenum(calculator_operand1));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 7:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            logten(calculator_operand1));
-
+        case PRIMENUM1:
+            printf("\n\t Primenum1 %d =%d\nEnter to continue", 
+            calculator_operand2, 
+            primenum1(calculator_operand2));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 8:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            squareroot(calculator_operand1));
-
+          case EVENODD:
+            printf("\n\t evenodd %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            evenodd(calculator_operand1));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 9:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            exponent(calculator_operand1));
-
+          case EVENODD1:
+            printf("\n\t evenodd1 %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            evenodd1(calculator_operand2));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 10:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            addition(calculator_operand1,calculator_operand2));
-
+          case POSNEG:
+            printf("\n\t posneg %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            posneg(calculator_operand1));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 11:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            subtraction(calculator_operand1,calculator_operand2));
-
+        case POSNEG1:
+            printf("\n\t posneg1 %d =%d\nEnter to continue", 
+            calculator_operand2, 
+            posneg1(calculator_operand2));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 12:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            multiplication(calculator_operand1,calculator_operand2));
-
+        case FACTORIAL:
+            printf("\n\t factorial %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            factorial(calculator_operand1));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 13:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            division(calculator_operand1,calculator_operand2));
-
+        case FACTORIAL1:
+            printf("\n\t factorial %d =%d\nEnter to continue", 
+            calculator_operand2, 
+            factorial1(calculator_operand2));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 14:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            modulus(calculator_operand1,calculator_operand2));
-
+            case SQUAREAREA:
+            printf("\n\t area %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            squarearea(calculator_operand1));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 15:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            power(calculator_operand1,calculator_operand2));
-
+            case SQUAREPERI:
+            printf("\n\t peri %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            squareperi(calculator_operand1));
+            
             __fpurge(stdin);
             getchar();
             break;
-        case 16:
-            printf("\n\t%d + %d = %d\nEnter to continue",
-            calculator_operand1,
-            factorial(calculator_operand3));
-
+            case SQUARE:
+            printf("\n\t square %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            square(calculator_operand1));
+            
             __fpurge(stdin);
             getchar();
             break;
-
-        case 17:
+            case SQUARE1:
+            printf("\n\t square %d =%d\nEnter to continue", 
+            calculator_operand2, 
+            square1(calculator_operand2));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case CUBE:
+            printf("\n\t cube %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            cube(calculator_operand1));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case CUBE1:
+            printf("\n\t cube1 %d =%d\nEnter to continue", 
+            calculator_operand2, 
+            cube1(calculator_operand2));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case REVERSE:
+            printf("\n\t reverse %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            reverse(calculator_operand1));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case REVERSE1:
+            printf("\n\t reverse1 %d =%d\nEnter to continue", 
+            calculator_operand2, 
+           reverse1(calculator_operand2));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case PALINDROME:
+            printf("\n\t palindrome %d =%d\nEnter to continue", 
+            calculator_operand1, 
+           palindrome(calculator_operand1));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case PALINDROME1:
+            printf("\n\t palindrome1 %d =%d\nEnter to continue", 
+            calculator_operand2, 
+            palindrome1(calculator_operand2));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case GCD:
+            printf("\n\t gcd =%d\nEnter to continue", 
+            gcd(calculator_operand1, calculator_operand2));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case LCM:
+            printf("\n\t lcm  =%d\nEnter to continue", 
+            
+            lcm(calculator_operand1, calculator_operand2));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case MODULUS:
+            printf("\n\t modulus  =%d\nEnter to continue", 
+             
+            modulus(calculator_operand1, calculator_operand2));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case KILOMETERTOMETER:
+            printf("\n\t km %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            kilometertometer(calculator_operand1));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case KILOTOCENTIMETER:
+            printf("\n\t km %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            kilotocentimeter(calculator_operand1));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            case KILOTOMILLIMETER:
+            printf("\n\t km %d =%d\nEnter to continue", 
+            calculator_operand1, 
+            kilotomillimeter(calculator_operand1));
+            
+            __fpurge(stdin);
+            getchar();
+            break;
+            
+        case 30:
             exit(0);
             break;
         default:
@@ -214,5 +309,5 @@ void calculator_menu(void)
 int valid_operation(int operation)
 {
     /* Check if the operation is a valid operation */
-    return ((sine <= operation) && (EXIT >= operation)) ? VALID: INVALID;
+    return ((ADD <= operation) && (EXIT >= operation)) ? VALID: INVALID;
 }

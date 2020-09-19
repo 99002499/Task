@@ -39,7 +39,7 @@ int smaller(int operand1, int operand2)
         return operand2;
 }
 
-int primenum(int operand1)
+int primenum1(int operand1)
 {
     int i,m=0,flag=0;    
       
@@ -57,7 +57,7 @@ int primenum(int operand1)
     return 1;  
 }
     
-int primenum1(int operand2)
+int primenum2(int operand2)
 {
     int i,m=0,flag=0;    
       
@@ -75,7 +75,7 @@ int primenum1(int operand2)
     return 1;  
 }
 
-int evenodd(int operand1)
+int evenorodd1(int operand1)
 {
     if(operand1%2==0)
         return 1;
@@ -83,7 +83,7 @@ int evenodd(int operand1)
         return 0; 
 }
 
-int evenodd1(int operand2)
+int evenorodd2(int operand2)
 {
     if(operand2%2==0)
         return 1;
@@ -91,7 +91,7 @@ int evenodd1(int operand2)
         return 0; 
 }
 
-int posneg(int operand1)
+int posneg1(int operand1)
 {
     if(operand1>0)
         return 1;
@@ -101,7 +101,7 @@ int posneg(int operand1)
         return -1;
 }
 
-int posneg1(int operand2)
+int posneg2(int operand2)
 {
     if(operand2>0)
         return 1;
@@ -111,7 +111,7 @@ int posneg1(int operand2)
         return -1;
 }
 
-int factorial(int operand1)
+int factorial1(int operand1)
 {
    if(operand1 < 0)
     return -1;
@@ -120,7 +120,7 @@ int factorial(int operand1)
 return operand1 * factorial(operand1-1);
 }
 
-int factorial1(int operand2)
+int factorial2(int operand2)
 {
    if(operand2 < 0)
     return -1;
@@ -139,24 +139,24 @@ int squareperi(int operand1)
     return 4*operand1;
 }
 
-int square(int operand1)
+int square1(int operand1)
 {
     return operand1*operand1;
 }
-int square1(int operand2)
+int square2(int operand2)
 {
     return operand2*operand2;
 }
-int cube(int operand1)
+int cube1(int operand1)
 {
     return operand1*operand1*operand1;
 }
-int cube1(int operand2)
+int cube2(int operand2)
 {
     return operand2*operand2*operand2;
 }
 
-int reverse(int operand1)
+int reverse1(int operand1)
 {
     int rev=0,remainder;
     while(operand1!=0){
@@ -166,7 +166,7 @@ int reverse(int operand1)
     }
     return rev;
 }
-int reverse1(int operand2)
+int reverse2(int operand2)
 {
     int rev=0,remainder;
     while(operand2!=0){
@@ -176,7 +176,7 @@ int reverse1(int operand2)
     }
     return rev;
 }
-int palindrome(int operand1)
+int palindrome1(int operand1)
 {
     int rev=0,remainder,original;
     original = operand1;
@@ -190,7 +190,7 @@ int palindrome(int operand1)
     else
         return 0;
 }
-int palindrome1(int operand2)
+int palindrome2(int operand2)
 {
     int rev=0,remainder,original;
     original = operand2;
@@ -204,7 +204,7 @@ int palindrome1(int operand2)
     else
         return 0;
 }
-int gcd(int operand1, int operand2)
+int hcf(int operand1, int operand2)
 {
     int count,gcd;
     for(count=1;count<=operand1 && count<=operand2;++count)

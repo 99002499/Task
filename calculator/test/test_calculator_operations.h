@@ -12,25 +12,25 @@ void test_multiply(void);
 void test_divide(void);
 void test_greater(void);
 void test_smaller(void);
-void test_primenum(void);
 void test_primenum1(void);
-void test_evenodd(void);
-void test_evenodd1(void);
-void test_posneg(void);
+void test_primenum2(void);
+void test_evenorodd1(void);
+void test_evenorodd2(void);
 void test_posneg1(void);
-void test_factorial(void);
+void test_posneg2(void);
 void test_factorial1(void);
+void test_factorial2(void);
 void test_squarearea(void);
 void test_squareperi(void);
-void test_square(void);
 void test_square1(void);
-void test_cube(void);
+void test_square2(void);
 void test_cube1(void);
-void test_reverse(void);
+void test_cube2(void);
 void test_reverse1(void);
-void test_palindrome(void);
+void test_reverse2(void);
 void test_palindrome1(void);
-void test_gcd(void);
+void test_palindrome2(void);
+void test_hcf(void);
 void test_lcm(void);
 void test_modulus(void);
 void test_kilometertometer(void);
@@ -54,25 +54,25 @@ int main() {
   CU_add_test(suite, "divide", test_divide);
   CU_add_test(suite, "greater", test_greater);
   CU_add_test(suite, "smaller", test_smaller);
-  CU_add_test(suite, "primenum", test_primenum);
-  CU_add_test(suite, "primenum1", test_primenum1);
-  CU_add_test(suite, "evenodd", test_evenodd);
-   CU_add_test(suite, "evenodd1", test_evenodd1);
-   CU_add_test(suite, "posneg", test_posneg);
-  CU_add_test(suite, "posneg1", test_posneg1);
-  CU_add_test(suite, "factorial", test_factorial);
-   CU_add_test(suite, "factorial1", test_factorial1);
+  CU_add_test(suite, "primenum", test_primenum1);
+  CU_add_test(suite, "primenum1", test_primenum2);
+  CU_add_test(suite, "evenodd", test_evenorodd1);
+   CU_add_test(suite, "evenodd1", test_evenorodd2);
+   CU_add_test(suite, "posneg", test_posneg1);
+  CU_add_test(suite, "posneg1", test_posneg2);
+  CU_add_test(suite, "factorial", test_factorial1);
+   CU_add_test(suite, "factorial1", test_factorial2);
    CU_add_test(suite, "squarearea", test_squarearea);
    CU_add_test(suite, "squareperi", test_squareperi);
-   CU_add_test(suite, "square", test_square);
-   CU_add_test(suite, "square1", test_square1);
-   CU_add_test(suite, "cube", test_cube);
-  CU_add_test(suite, "cube1", test_cube1);
-  CU_add_test(suite, "reverse", test_reverse);
-  CU_add_test(suite, "reverse1", test_reverse1);
-  CU_add_test(suite, "palindrome", test_palindrome);
-  CU_add_test(suite, "palindrome1", test_palindrome1);
-   CU_add_test(suite, "gcd", test_gcd);
+   CU_add_test(suite, "square", test_square1);
+   CU_add_test(suite, "square1", test_square2);
+   CU_add_test(suite, "cube", test_cube1);
+  CU_add_test(suite, "cube1", test_cube2);
+  CU_add_test(suite, "reverse", test_reverse1);
+  CU_add_test(suite, "reverse1", test_reverse2);
+  CU_add_test(suite, "palindrome", test_palindrome1);
+  CU_add_test(suite, "palindrome1", test_palindrome2);
+   CU_add_test(suite, "gcd", test_hcf);
   CU_add_test(suite, "lcm", test_lcm);
   CU_add_test(suite, "modulus", test_modulus);
    CU_add_test(suite, "kilometertometer", test_kilometertometer);
@@ -135,14 +135,6 @@ void test_smaller(void) {
   CU_ASSERT(40 == smaller(30, 40));
 }
 
-void test_primenum(void)
-{
-   CU_ASSERT(1 == primenum(7));
-  
-  /* Dummy fail*/
-  CU_ASSERT(1 == primenum(30));
-}
-
 void test_primenum1(void)
 {
    CU_ASSERT(1 == primenum1(7));
@@ -151,30 +143,30 @@ void test_primenum1(void)
   CU_ASSERT(1 == primenum1(30));
 }
 
-void test_evenodd(void)
+void test_primenum2(void)
 {
-   CU_ASSERT(1 == evenodd(6));
+   CU_ASSERT(1 == primenum2(7));
   
   /* Dummy fail*/
-  CU_ASSERT(1 == evenodd(5));
+  CU_ASSERT(1 == primenum2(30));
 }
 
-void test_evenodd1(void)
+void test_evenorodd1(void)
 {
-   CU_ASSERT(1 == evenodd1(6));
+   CU_ASSERT(1 == evenorodd1(6));
   
   /* Dummy fail*/
-  CU_ASSERT(1 == evenodd1(5));
-}
-  
-void test_posneg(void)
-{
-   CU_ASSERT(1 == posneg(6));
-  
-  /* Dummy fail*/
-  CU_ASSERT(1 == posneg(-5));
+  CU_ASSERT(1 == evenorodd1(5));
 }
 
+void test_evenorodd2(void)
+{
+   CU_ASSERT(1 == evenodd2(6));
+  
+  /* Dummy fail*/
+  CU_ASSERT(1 == evenodd2(5));
+}
+  
 void test_posneg1(void)
 {
    CU_ASSERT(1 == posneg1(6));
@@ -183,12 +175,12 @@ void test_posneg1(void)
   CU_ASSERT(1 == posneg1(-5));
 }
 
-void test_factorial(void)
+void test_posneg2(void)
 {
-   CU_ASSERT(120 == factorial(5));
+   CU_ASSERT(1 == posneg2(6));
   
   /* Dummy fail*/
-  CU_ASSERT(110 == factorial(5));
+  CU_ASSERT(1 == posneg2(-5));
 }
 
 void test_factorial1(void)
@@ -197,6 +189,14 @@ void test_factorial1(void)
   
   /* Dummy fail*/
   CU_ASSERT(110 == factorial1(5));
+}
+
+void test_factorial2(void)
+{
+   CU_ASSERT(120 == factorial2(5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(110 == factorial2(5));
 }
 
 void test_squarearea(void)
@@ -213,13 +213,6 @@ void test_squareperi(void)
   /* Dummy fail*/
   CU_ASSERT(11 == squareperi(5));
 }
-void test_square(void)
-{
-   CU_ASSERT(25 == square(5));
-  
-  /* Dummy fail*/
-  CU_ASSERT(11 == square(5));
-}
 void test_square1(void)
 {
    CU_ASSERT(25 == square1(5));
@@ -227,12 +220,12 @@ void test_square1(void)
   /* Dummy fail*/
   CU_ASSERT(11 == square1(5));
 }
-void test_cube(void)
+void test_square2(void)
 {
-   CU_ASSERT(125 == cube(5));
+   CU_ASSERT(25 == square2(5));
   
   /* Dummy fail*/
-  CU_ASSERT(11 == cube(5));
+  CU_ASSERT(11 == square2(5));
 }
 void test_cube1(void)
 {
@@ -241,12 +234,12 @@ void test_cube1(void)
   /* Dummy fail*/
   CU_ASSERT(11 == cube1(5));
 }
-void test_reverse(void)
+void test_cube2(void)
 {
-   CU_ASSERT(432 == reverse(234));
+   CU_ASSERT(125 == cube2(5));
   
   /* Dummy fail*/
-  CU_ASSERT(234 == reverse(234));
+  CU_ASSERT(11 == cube2(5));
 }
 void test_reverse1(void)
 {
@@ -255,12 +248,12 @@ void test_reverse1(void)
   /* Dummy fail*/
   CU_ASSERT(234 == reverse1(234));
 }
-void test_palindrome(void)
+void test_reverse2(void)
 {
-   CU_ASSERT(1 == palindrome(1001));
+   CU_ASSERT(432 == reverse2(234));
   
   /* Dummy fail*/
-  CU_ASSERT(1 == palindrome(2345));
+  CU_ASSERT(234 == reverse2(234));
 }
 void test_palindrome1(void)
 {
@@ -269,12 +262,19 @@ void test_palindrome1(void)
   /* Dummy fail*/
   CU_ASSERT(1 == palindrome1(2345));
 }
-void test_gcd(void)
+void test_palindrome2(void)
 {
-   CU_ASSERT(1 == gcd(2,5));
+   CU_ASSERT(1 == palindrome2(1001));
   
   /* Dummy fail*/
-  CU_ASSERT(1 == gcd(2,6));
+  CU_ASSERT(1 == palindrome2(2345));
+}
+void test_hcf(void)
+{
+   CU_ASSERT(1 == hcf(2,5));
+  
+  /* Dummy fail*/
+  CU_ASSERT(1 == hcf(2,6));
 }
 void test_lcm(void)
 {
@@ -288,7 +288,7 @@ void test_modulus(void)
    CU_ASSERT(1 == modulus(5,2));
   
   /* Dummy fail*/
-  CU_ASSERT(11 == lcm(5,2));
+  CU_ASSERT(11 == modulus(5,2));
 }
 void test_kilometertometer(void)
 {

@@ -109,7 +109,7 @@ void calculator_menu(void)
         case PRIMENUM:
             printf("\n\t Primenum %d =%d\nEnter to continue", 
             calculator_operand1, 
-            primenum(calculator_operand1));
+            primenum1(calculator_operand1));
             
             __fpurge(stdin);
             getchar();
@@ -117,7 +117,7 @@ void calculator_menu(void)
         case PRIMENUM1:
             printf("\n\t Primenum1 %d =%d\nEnter to continue", 
             calculator_operand2, 
-            primenum1(calculator_operand2));
+            primenum2(calculator_operand2));
             
             __fpurge(stdin);
             getchar();
@@ -125,7 +125,7 @@ void calculator_menu(void)
           case EVENODD:
             printf("\n\t evenodd %d =%d\nEnter to continue", 
             calculator_operand1, 
-            evenodd(calculator_operand1));
+            evenorodd1(calculator_operand1));
             
             __fpurge(stdin);
             getchar();
@@ -133,7 +133,7 @@ void calculator_menu(void)
           case EVENODD1:
             printf("\n\t evenodd1 %d =%d\nEnter to continue", 
             calculator_operand1, 
-            evenodd1(calculator_operand2));
+            evenorodd2(calculator_operand2));
             
             __fpurge(stdin);
             getchar();
@@ -141,7 +141,7 @@ void calculator_menu(void)
           case POSNEG:
             printf("\n\t posneg %d =%d\nEnter to continue", 
             calculator_operand1, 
-            posneg(calculator_operand1));
+            posneg1(calculator_operand1));
             
             __fpurge(stdin);
             getchar();
@@ -149,7 +149,7 @@ void calculator_menu(void)
         case POSNEG1:
             printf("\n\t posneg1 %d =%d\nEnter to continue", 
             calculator_operand2, 
-            posneg1(calculator_operand2));
+            posneg2(calculator_operand2));
             
             __fpurge(stdin);
             getchar();
@@ -157,7 +157,7 @@ void calculator_menu(void)
         case FACTORIAL:
             printf("\n\t factorial %d =%d\nEnter to continue", 
             calculator_operand1, 
-            factorial(calculator_operand1));
+            factorial1(calculator_operand1));
             
             __fpurge(stdin);
             getchar();
@@ -165,7 +165,7 @@ void calculator_menu(void)
         case FACTORIAL1:
             printf("\n\t factorial %d =%d\nEnter to continue", 
             calculator_operand2, 
-            factorial1(calculator_operand2));
+            factorial2(calculator_operand2));
             
             __fpurge(stdin);
             getchar();
@@ -189,7 +189,7 @@ void calculator_menu(void)
             case SQUARE:
             printf("\n\t square %d =%d\nEnter to continue", 
             calculator_operand1, 
-            square(calculator_operand1));
+            square1(calculator_operand1));
             
             __fpurge(stdin);
             getchar();
@@ -197,7 +197,7 @@ void calculator_menu(void)
             case SQUARE1:
             printf("\n\t square %d =%d\nEnter to continue", 
             calculator_operand2, 
-            square1(calculator_operand2));
+            square2(calculator_operand2));
             
             __fpurge(stdin);
             getchar();
@@ -205,7 +205,7 @@ void calculator_menu(void)
             case CUBE:
             printf("\n\t cube %d =%d\nEnter to continue", 
             calculator_operand1, 
-            cube(calculator_operand1));
+            cube1(calculator_operand1));
             
             __fpurge(stdin);
             getchar();
@@ -213,7 +213,7 @@ void calculator_menu(void)
             case CUBE1:
             printf("\n\t cube1 %d =%d\nEnter to continue", 
             calculator_operand2, 
-            cube1(calculator_operand2));
+            cube2(calculator_operand2));
             
             __fpurge(stdin);
             getchar();
@@ -221,7 +221,7 @@ void calculator_menu(void)
             case REVERSE:
             printf("\n\t reverse %d =%d\nEnter to continue", 
             calculator_operand1, 
-            reverse(calculator_operand1));
+            reverse1(calculator_operand1));
             
             __fpurge(stdin);
             getchar();
@@ -229,7 +229,7 @@ void calculator_menu(void)
             case REVERSE1:
             printf("\n\t reverse1 %d =%d\nEnter to continue", 
             calculator_operand2, 
-           reverse1(calculator_operand2));
+           reverse2(calculator_operand2));
             
             __fpurge(stdin);
             getchar();
@@ -237,7 +237,7 @@ void calculator_menu(void)
             case PALINDROME:
             printf("\n\t palindrome %d =%d\nEnter to continue", 
             calculator_operand1, 
-           palindrome(calculator_operand1));
+           palindrome1(calculator_operand1));
             
             __fpurge(stdin);
             getchar();
@@ -245,14 +245,14 @@ void calculator_menu(void)
             case PALINDROME1:
             printf("\n\t palindrome1 %d =%d\nEnter to continue", 
             calculator_operand2, 
-            palindrome1(calculator_operand2));
+            palindrome2(calculator_operand2));
             
             __fpurge(stdin);
             getchar();
             break;
             case GCD:
             printf("\n\t gcd =%d\nEnter to continue", 
-            gcd(calculator_operand1, calculator_operand2));
+            hcf(calculator_operand1, calculator_operand2));
             
             __fpurge(stdin);
             getchar();
